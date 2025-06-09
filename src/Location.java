@@ -25,9 +25,13 @@ public class Location {
      * Байршилд шинэ бараа бүтээгдэхүүн нэмнэ.
      * @param p нэмэх бараа бүтээгдэхүүн
      */
+     
     public void addProduct(Product p) {
-        products.add(p);
+    if (p == null) {
+        throw new IllegalArgumentException("Product cannot be null");
     }
+    products.add(p);
+}
 
     /**
      * Байршлаас тодорхой бараа бүтээгдэхүүнийг устгана.
