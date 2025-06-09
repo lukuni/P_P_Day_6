@@ -25,10 +25,13 @@ public class Location {
      * Байршилд шинэ бараа бүтээгдэхүүн нэмнэ.
      * @param p нэмэх бараа бүтээгдэхүүн
      */
-     
+
     public void addProduct(Product p) {
     if (p == null) {
-        throw new IllegalArgumentException("Product cannot be null");
+        throw new IllegalArgumentException("Product must not be null");
+    }
+    if (products.size() >= 100) {
+        throw new IllegalStateException("Cannot add more than 100 products to this location");
     }
     products.add(p);
 }
